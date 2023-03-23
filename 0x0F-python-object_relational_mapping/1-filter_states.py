@@ -14,7 +14,7 @@ if __name__ == "__main__":
         password=argv[2], database=argv[3])
     cursor = con.cursor()
     cursor.execute(
-            "SELECT * FROM states WHERE name LIKE BINARY 'N%'ORDER BY id ASC")
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%'ORDER BY id ASC")
     db = cursor.fetchall()
     for i in db:
         print(i)
