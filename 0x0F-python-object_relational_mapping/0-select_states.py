@@ -12,18 +12,18 @@ if __name__ == '__main__':
     dbname = argv[3]
 
     try:
-        db = msdb.connect(host='localhost', port=3306,
-                          user=username, passwd=password, db=dbname)
+        con = msdb.connect(host='localhost', port=3306,
+                           user=username, passwd=password, db=dbname)
     except Exception:
         print("Failed to connect to the database")
         exit(0)
-    cursor = db.cursor()
+    cursor = con.cursor()
 
-    cursor.execute('SELECT * FROM states ORDER BY id ASC')
+    cursor.execute('SELECT * FROM states ORDER BY id ASC;')
     results = cursor.fetchall()
 
     for row in results:
         print(row)
 
     cursor.close()
-    db.close()
+    con.close()
