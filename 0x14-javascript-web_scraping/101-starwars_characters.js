@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const request = require("request");
-const urlMovie = "https://swapi-api.hbtn.io/api/films/3";
+const urlMovie = "https://swapi-api.hbtn.io/api/films/" + process.argv[2];
 
 request(urlMovie, async function (error, response, body) {
 	const arr = [];
